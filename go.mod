@@ -2,7 +2,10 @@ module github.com/nahidhasan98/sb-mobile
 
 go 1.22.1
 
-require github.com/gin-gonic/gin v1.9.1
+require (
+	github.com/gin-gonic/gin v1.9.1
+	github.com/nahidhasan98/discord-text-hook v0.0.0-20211013224151-54e8d7f3374a
+)
 
 require (
 	github.com/bytedance/sonic v1.9.1 // indirect
