@@ -7,5 +7,8 @@ The aim of **sb-mobile** is to provide flexibility to mobile device users. Usual
 ## Sample Mobile View
 ![Mobile View](/assets/images/mobile.png)
 
+## Solved View
+![Solved View](/assets/images/solved.png)
+
 ## Courtesy:
 SB Super Deluxe. The official website: https://sbsuperdeluxe.com/
