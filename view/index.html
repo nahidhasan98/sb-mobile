@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/styles/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../assets/styles/select2.min.css" type="text/css">
+    <link rel="stylesheet" href="../assets/styles/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="../assets/styles/main.css" type="text/css">
+
+    <title>{{ .Title }}</title>
+</head>
+
+<body>
+    <div class="header py-2">
+        <div class="headerlogo">
+            <a href="/">
+                <img src="../assets/images/logo.png" alt="" srcset="">
+            </a>
+        </div>
+        <div class="headerText">
+            <h3 class="text-end">SB Super Deluxe</h3>
+            <h6 class="text-end mb-0">Display Bus Routes on Mobile (unofficial)</h6>
+        </div>
+    </div>
+
+    <div class="nav"></div>
+
+    <div id="container" class="py-1">
+        <form method="post" action="" class="searchForm">
+            <div>
+                <label for="counterId" id="counterIdLabel" class="form-label">From</label>
+                <select name="counterId" id="counterId" class="form-control">
+                    <option value="" selected disabled>Where From?</option>
+                    <option value="129">Alamdanga</option>
+                    <option value="79">Allardarga</option>
+                    <option value="86">Allardarga 2</option>
+                    <option value="44">Amla</option>
+                    <option value="116">Amla Fram Road </option>
+                    <option value="53">Baipail</option>
+                    <option value="132">Baipail-2</option>
+                    <option value="47">Bamundi</option>
+                    <option value="142">Bamundi-2</option>
+                    <option value="78">Baut Bazer</option>
+                    <option value="43">Bheramara</option>
+                    <option value="135">Bismail</option>
+                    <option value="51">Bittipara</option>
+                    <option value="124">Bittipara-2</option>
+                    <option value="131">Bollovpur</option>
+                    <option value="77">Bonpara</option>
+                    <option value="72">Bus Stuff</option>
+                    <option value="52">Chandra</option>
+                    <option value="119">Chandra-2</option>
+                    <option value="118">Chariarbil Bazer</option>
+                    <option value="137">Chourhash</option>
+                    <option value="83">Dangmorka Bazer</option>
+                    <option value="58">Dashuria</option>
+                    <option value="141">Dharmodah</option>
+                    <option value="50">Fulbaria</option>
+                    <option value="37">Gabtoli</option>
+                    <option value="110">Gabtoli 3</option>
+                    <option value="48">Gangni</option>
+                    <option value="57">Garagong</option>
+                    <option value="114">Garagong-2</option>
+                    <option value="87">Garura</option>
+                    <option value="125">Genda Savar </option>
+                    <option value="130">Halsa</option>
+                    <option value="128">Hardi</option>
+                    <option value="127">Hatboalia</option>
+                    <option value="75">Hemayetpur</option>
+                    <option value="133">Hemayetpur-2</option>
+                    <option value="81">Hosenabad</option>
+                    <option value="143">Jamjami Bazar</option>
+                    <option value="112">Jhenidah-1</option>
+                    <option value="136">Jorepukuria</option>
+                    <option value="38">Kallyanpur</option>
+                    <option value="85">Kazipur</option>
+                    <option value="1">Khalek Pump</option>
+                    <option value="60">Khalisakundi</option>
+                    <option value="107">Khoksha</option>
+                    <option value="106">Kumarkhali</option>
+                    <option value="42">Kushtia</option>
+                    <option value="120">Kushtia-3</option>
+                    <option value="126">Lahini Bottola</option>
+                    <option value="40">Lakkhipur</option>
+                    <option value="67">Magura</option>
+                    <option value="89">Magura Oabda More</option>
+                    <option value="138">MANIKGANJ</option>
+                    <option value="64">Meherpur</option>
+                    <option value="46">Mirpur</option>
+                    <option value="121">Mirpur-10</option>
+                    <option value="82">Mothurapur</option>
+                    <option value="71">Nabinagar</option>
+                    <option value="134">Nabinagar-2</option>
+                    <option value="109">Online-2</option>
+                    <option value="140">Palli Bidyut Nabinagor</option>
+                    <option value="84">Pragpur</option>
+                    <option value="59">Ruppur</option>
+                    <option value="49">Savar</option>
+                    <option value="56">Shailkupa</option>
+                    <option value="123">Shailkupa-2</option>
+                    <option value="41">Shekpara</option>
+                    <option value="111">SREEPUR</option>
+                    <option value="55">Tangail</option>
+                    <option value="80">Taragunia</option>
+                    <option value="74">Vadalia</option>
+                    <option value="54">Zirani Bazar</option>
+                    <option value="139">Zirani Bazar-2</option>
+                </select>
+                <span id="counterIdError" class="error"></span>
+            </div>
+            <div>
+                <label for="stationId" id="stationIdLabel" class="form-label">To</label>
+                <select name="stationId" id="stationId" class="form-control">
+                    <option value="" selected disabled>Where To?</option>
+                    <option value="54">Airpot</option>
+                    <option value="45">Alamdanga</option>
+                    <option value="40">Allardorga</option>
+                    <option value="36">Arappur</option>
+                    <option value="22">Baipail</option>
+                    <option value="1">Bheramara</option>
+                    <option value="47">Bollovpur</option>
+                    <option value="4">Bonpara</option>
+                    <option value="20">Chandra</option>
+                    <option value="43">Chittagong</option>
+                    <option value="34">Chuadanga</option>
+                    <option value="2">Dashuria</option>
+                    <option value="25">Dhaka</option>
+                    <option value="26">Gabtoli</option>
+                    <option value="28">Gangni</option>
+                    <option value="18">Garagonj</option>
+                    <option value="50">GULISTAN</option>
+                    <option value="46">Halsa</option>
+                    <option value="44">Hatboalia</option>
+                    <option value="51">JATRABARI</option>
+                    <option value="32">Jhenaidah</option>
+                    <option value="23">Jirani</option>
+                    <option value="27">Kallayanpur</option>
+                    <option value="39">Kazipur</option>
+                    <option value="13">Khoksha</option>
+                    <option value="49">KOLA BAGAN</option>
+                    <option value="14">Kumarkhali</option>
+                    <option value="15">Kushtia</option>
+                    <option value="17">Lakkhipur</option>
+                    <option value="33">Magura</option>
+                    <option value="9">Manikgonj</option>
+                    <option value="31">Meherpur</option>
+                    <option value="35">Mujibnagar</option>
+                    <option value="37">Nabinagar</option>
+                    <option value="10">Pangsa</option>
+                    <option value="12">Pangsha</option>
+                    <option value="21">Paturia</option>
+                    <option value="41">Pragpur</option>
+                    <option value="11">Rajbari</option>
+                    <option value="30">Ruppur</option>
+                    <option value="8">Savar</option>
+                    <option value="52">Sayedabad</option>
+                    <option value="19">Shailkupa</option>
+                    <option value="16">Sheikhpara</option>
+                    <option value="6">Sirajgonj</option>
+                    <option value="7">Tangail</option>
+                    <option value="24">Trimohini</option>
+                </select>
+                <span id="stationIdError" class="error"></span>
+                <span id="stationIdLoading">
+                    <img src="../assets/images/loadingCircle.gif" alt="">
+                </span>
+            </div>
+            <div>
+                <label for="journeyDate" id="journeyDateLabel" class="form-label">Date</label>
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-calendar3" viewBox="0 0 16 16">
+                            <path
+                                d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+                            <path
+                                d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                        </svg>
+                    </span>
+                    <input name="journeyDate" id="journeyDate" type="text" class="form-control">
+                </div>
+                <span id="journeyDateError" class="error"></span>
+            </div>
+            <div>
+                <input type="submit" value="Find Bus" id="findBtn" class="btn form-control">
+                <span id="findBtnLoading">
+                    <img src="../assets/images/loadingCircle.gif" alt="">
+                </span>
+            </div>
+        </form>
+
+        <div class="table-responsive mt-3">
+            <table class="table table-light table-striped text-center mb-0" id="scheduleTable">
+                <thead>
+                    <tr>
+                        <td>Coach</td>
+                        <td id="dateCol">Date</td>
+                        <td>Seats</td>
+                        <td>Available</td>
+                        <td>Route Name</td>
+                        <td>Fare</td>
+                        <td>View Seats</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="100%" class="noSchedule">
+                            <img src="../assets/images/tom.png" alt="">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="loadingIconSection">
+                <img src="../assets/images/loading.gif" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer text-center py-2">
+        <p class="mb-1">Md. Nahid Hasan</p>
+        <p class="mb-0">
+            <span class="me-2">
+                <a href="https://github.com/nahidhasan98">
+                    <img src="../assets/images/github.png" alt="" srcset="">
+                </a>
+            </span> |
+            <span class="mx-2">
+                <a href="https://linkedin.com/in/nahidhasan98">
+                    <img src="../assets/images/linkedin.png" alt="" srcset="">
+                </a>
+            </span> |
+            <span class="ms-2">
+                <a href="mailto:mnh.nahid35@gmail.com">
+                    <img src="../assets/images/mail.png" alt="" srcset="">
+                </a>
+            </span>
+        </p>
+    </div>
+
+    <!-- scripts -->
+    <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
+    <script src="../assets/scripts/bootstrap.bundle.min.js"></script>
+    <script src="../assets/scripts/select2.full.min.js"></script>
+    <script src="../assets/scripts/jquery-ui-1.3.2.min.js"></script>
+    <script src="../assets/scripts/main.js"></script>
+</body>
+
+</html>

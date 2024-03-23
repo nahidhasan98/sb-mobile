@@ -1,0 +1,281 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 90%;
+    margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #b6b9c8;
+    background-color: #122033;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 120px auto;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #284671;
+}
+
+.header img {
+    height: 60px;
+}
+
+.headerlogo {
+    background: #fff;
+    border-radius: 3px;
+}
+
+.headerText h6 {
+    font-size: 14px;
+}
+
+#container {
+    min-height: 60vh;
+}
+
+.searchForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 100px;
+    background: lightblue;
+    padding: 6px 0px;
+    border-radius: 3px;
+}
+
+.searchForm>div {
+    width: 90%;
+}
+
+.searchForm>div:not(:first-child) {
+    position: relative;
+}
+
+.searchForm label {
+    color: #000;
+    margin-bottom: 0 !important;
+    padding-left: 1px;
+}
+
+.searchForm select {
+    height: 30px;
+}
+
+.select2-container {
+    width: 100% !important;
+}
+
+.select2-selection__rendered {
+    line-height: 30px !important;
+}
+
+.select2-container .select2-selection--single, .select2-selection__arrow {
+    height: 30px !important;
+}
+
+.select2-results__option {
+    color: #444 !important;
+}
+
+.select2-container--default .select2-results__option--disabled {
+    color: #999 !important;
+}
+
+.select2-search__field:focus-visible {
+    outline: none !important;
+    border-radius: 3px !important;
+}
+
+.error {
+    color: #d90e0c;
+    padding-left: 1px;
+}
+
+#stationIdLoading {
+    display: none;
+    position: absolute;
+    top: 23px;
+    left: 40%;
+}
+
+.input-group-text {
+    height: 30px;
+    border: 1px solid #aaa;
+    border-radius: 4px 0 0 4px;
+}
+
+#journeyDate {
+    height: 30px;
+    padding: 6px 8px;
+    border: 1px solid #aaa;
+    border-radius: 0 4px 4px 0;
+}
+
+#findBtn {
+    width: 90%;
+    height: 30px;
+    padding: 0px;
+    margin-top: 20px;
+    color: #fff;
+    background: #e35b5a;
+    border: 1px solid #d14b4a;
+    border-radius: 4px;
+}
+
+#findBtn:hover {
+    background: #bb3635;
+}
+
+#findBtnLoading {
+    display: none;
+    position: absolute;
+    top: 23px;
+    left: 30%;
+}
+
+#stationIdLoading img, #findBtnLoading img {
+    height: 24px;
+}
+
+.table-responsive {
+    min-height: 300px;
+    position: relative;
+    background: #ecedee;
+    border-radius: 3px;
+}
+
+#scheduleTable {
+    background: #ecedee;
+    border-radius: 5px;
+}
+
+#scheduleTable td {
+    vertical-align: middle !important;
+}
+
+#scheduleTable thead td {
+    background: #E35B5A;
+    color: #fff;
+}
+
+#scheduleTable thead td:first-child {
+    border-radius: 3px 0 0 0;
+}
+
+#scheduleTable thead td:last-child {
+    border-radius: 0 3px 0 0;
+}
+
+#scheduleTable thead td:not(:last-child) {
+    border-right: 1px solid #cd4a49;
+}
+
+#scheduleTable tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 3px;
+}
+
+#scheduleTable tbody tr:last-child td:last-child {
+    border-radius: 0 0 3px 0;
+}
+
+.noSchedule {
+    height: 200px;
+    font-size: 16px;
+    color: #e35b5a !important;
+    border-bottom: 0 !important;
+    border-radius: 0 0 3px 3px !important;
+}
+
+.noSchedule img {
+    height: 200px;
+}
+
+.smallText {
+    font-size: 12px;
+}
+
+.viewBtn {
+    padding: 6px 8px;
+    color: #fff !important;
+    background: #e35b5a !important;
+    border: 1px solid #d14b4a !important;
+    border-radius: 4px;
+}
+
+.viewBtn:hover {
+    background: #bb3635;
+}
+
+.viewBtn:disabled {
+    opacity: 0.6 !important;
+    pointer-events: none !important;
+}
+
+.loadingIconSection {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 30%;
+}
+
+.loadingIconSection img {
+    height: 300px;
+}
+
+.footer {
+    border-top: 1px solid #284671;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer img {
+    width: 18px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .searchForm {
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        padding: 6px 0px;
+        background: lightblue;
+        border-radius: 3px;
+    }
+
+    #findBtn {
+        width: 100%;
+    }
+
+    #findBtnLoading {
+        left: 40%;
+    }
+
+    .loadingIconSection {
+        left: 24%;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 400px) {
+    .searchForm {
+        display: grid;
+        grid-template: repeat(4, 1fr) / 1fr;
+        padding: 6px 0px;
+        background: lightblue;
+        border-radius: 3px;
+    }
+
+    #stationIdLoading, #findBtnLoading {
+        left: 44%;
+    }
+
+    .loadingIconSection {
+        left: 0;
+    }
+}
