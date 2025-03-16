@@ -73,7 +73,8 @@ body {
     line-height: 30px !important;
 }
 
-.select2-container .select2-selection--single, .select2-selection__arrow {
+.select2-container .select2-selection--single,
+.select2-selection__arrow {
     height: 30px !important;
 }
 
@@ -137,7 +138,8 @@ body {
     left: 30%;
 }
 
-#stationIdLoading img, #findBtnLoading img {
+#stationIdLoading img,
+#findBtnLoading img {
     height: 24px;
 }
 
@@ -282,7 +284,8 @@ body {
         border-radius: 3px;
     }
 
-    #stationIdLoading, #findBtnLoading {
+    #stationIdLoading,
+    #findBtnLoading {
         left: 44%;
     }
 
