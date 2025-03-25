@@ -38,6 +38,7 @@
 
     <div class="nav"></div>
 
+    {{ if .Notice }}
     <div id="notice" class="pt-1 pb-2">
         <div class="alert alert-warning fade show m-0" role="alert">
             <strong style="text-align: center;">Notice:</strong>
@@ -59,6 +60,7 @@
             </pre>
         </div>
     </div>
+    {{ end }}
 
     <!-- <div class="survey py-2">
         <h5>Is this site needed?</h5>
@@ -273,9 +275,13 @@
     <div class="footer py-2">
         <div class="float-start" style="width: 50%;">
             <p class="mb-1">Courtesy:</p>
-            <p class="mb-0">
+            <p class="mb-1">
                 The official website:
                 <a href="https://sbsuperdeluxe.com/" target="_blank" style="color: #ff6f6e;">SB Super Deluxe.</a>
+            </p>
+            <p class="mb-0">
+                Official Helpline: <a href="tel:+8801841000026" style="color: #b6b9c8;">01841000026</a>, <a
+                    href="tel:+8801841000036" style="color: #b6b9c8;">01841000036</a>
             </p>
         </div>
         <div class="float-end">
