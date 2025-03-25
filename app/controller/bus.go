@@ -226,6 +226,6 @@ func GetSchedule(c *gin.Context) {
 func Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", gin.H{
 		"Title":  "Mobile | SB Super Deluxe",
-		"Notice": false,
+		"Notice": true,
 	})
 }
