@@ -293,3 +293,17 @@ body {
         left: 0;
     }
 }
+
+#notice .table td {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#notice .table-responsive {
+    min-height: 240px;
+}
+
+#notice a {
+    text-decoration: none;
+    color: #235eb1;
+}

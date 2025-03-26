@@ -223,9 +223,24 @@ func GetSchedule(c *gin.Context) {
 	})
 }
 
+var ticket map[string]string = map[string]string{
+	"operator":      "SB Super Deluxe",
+	"date":          "05-Apr-2025",
+	"time":          "11:00 AM",
+	"coach":         "5015-KE",
+	"seat":          "E1, E2",
+	"type":          "AC (Economy)",
+	"price":         "2400",
+	"route":         "Bheramara-Kushtia-Rajbari-Dhaka",
+	"contact":       "01760781145",
+	"facebook":      "https://www.facebook.com/nahid.achromatic98",
+	"facebook_name": "Nahid Hasan",
+}
+
 func Index(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", gin.H{
 		"Title":  "Mobile | SB Super Deluxe",
-		"Notice": true,
+		"Notice": false,
+		"Ticket": ticket,
 	})
 }

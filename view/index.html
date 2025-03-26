@@ -40,24 +40,56 @@
 
     {{ if .Notice }}
     <div id="notice" class="pt-1 pb-2">
-        <div class="alert alert-warning fade show m-0" role="alert">
-            <strong style="text-align: center;">Notice:</strong>
-            <pre>
-            আজ ২৬ তারিখ সকালের ১টা টিকিট আছে। কারো লাগলে নক করতে পারেন।
+        <div class="card alert alert-warning show m-0" role="alert">
+            <h5 class="card-title">Notice</h5>
 
-            অপারেটর: SB Super Deluxe
-            তারিখ: ২৬/০৩/২০২৫
-            সময়: সকাল ০৭:৪৫
-            কোচ নং: 9০4-ED
-            সিট: C1
-            টাইপ: এসি/AC (Hyundai)
-            টাকা: ১৭০০
-            রুট: কল্যাণপুর-রাজবাড়ী-কুষ্টিয়া।
-
-            যোগাযোগ: 01760781145
-            ফেসবুক: <a href="https://www.facebook.com/nahid.achromatic98" target="_blank"
-                style="text-decoration: none; color: #235eb1;">Nahid Hasan</a>
-            </pre>
+            <p class="card-text mb-2">5 তারিখ সকালের 2 টা টিকিট আছে। কারো লাগলে নক করতে পারেন।</p>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered mb-0">
+                    <tbody>
+                        <tr>
+                            <td>অপারেটর</td>
+                            <td>{{.Ticket.operator}}</td>
+                        </tr>
+                        <tr>
+                            <td>তারিখ</td>
+                            <td>{{.Ticket.date}}</td>
+                        </tr>
+                        <tr>
+                            <td>সময়</td>
+                            <td>{{.Ticket.time}}</td>
+                        </tr>
+                        <tr>
+                            <td>কোচ নং</td>
+                            <td>{{.Ticket.coach}}</td>
+                        </tr>
+                        <tr>
+                            <td>সিট</td>
+                            <td>{{.Ticket.seat}}</td>
+                        </tr>
+                        <tr>
+                            <td>টাইপ</td>
+                            <td>{{.Ticket.type}}</td>
+                        </tr>
+                        <tr>
+                            <td>টাকা</td>
+                            <td>{{.Ticket.price}}</td>
+                        </tr>
+                        <tr>
+                            <td>রুট</td>
+                            <td>{{.Ticket.route}}</td>
+                        </tr>
+                        <tr>
+                            <td>যোগাযোগ</td>
+                            <td><a href="tel:+8801760781145">{{.Ticket.contact}}</a></td>
+                        </tr>
+                        <tr>
+                            <td>ফেসবুক</td>
+                            <td><a href="{{.Ticket.facebook}}" target="_blank">{{.Ticket.facebook_name}}</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     {{ end }}
