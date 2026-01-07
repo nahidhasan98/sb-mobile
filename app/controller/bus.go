@@ -238,9 +238,14 @@ var ticket map[string]string = map[string]string{
 }
 
 func Index(c *gin.Context) {
+	// Check if request is from old domain to show migration notice
+	host := c.Request.Host
+	showMigrationNotice := host == "sb-mobile.ajudge.net"
+
 	c.HTML(http.StatusOK, "index.html", gin.H{
-		"Title":  "Mobile | SB Super Deluxe",
-		"Notice": false,
-		"Ticket": ticket,
+		"Title":               "Mobile | SB Super Deluxe",
+		"Notice":              false,
+		"Ticket":              ticket,
+		"ShowMigrationNotice": showMigrationNotice,
 	})
 }
