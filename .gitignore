@@ -3,6 +3,7 @@
 
 # all exe file
 *.exe
+sb-mobile
 
 # log files
 /log/*
