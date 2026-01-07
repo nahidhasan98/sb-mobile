@@ -238,9 +238,14 @@ var ticket map[string]string = map[string]string{
 }
 
 func Index(c *gin.Context) {
-	// Check if request is from old domain to show migration notice
-	host := c.Request.Host
-	showMigrationNotice := host == "sb-mobile.ajudge.net"
+	// Check for the query parameter we added in Nginx
+	origin := c.Query("old_domain")
+
+	showMigrationNotice := false
+	if origin == "true" {
+		showMigrationNotice = true
+		fmt.Println("User redirected from sb-mobile.ajudge.net")
+	}
 
 	c.HTML(http.StatusOK, "index.html", gin.H{
 		"Title":               "Mobile | SB Super Deluxe",
