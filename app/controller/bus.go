@@ -5,11 +5,18 @@ import (
 	"log"
 	"net/http"
 	"strconv"
+	"sync"
 
 	"github.com/gin-gonic/gin"
 	discordtexthook "github.com/nahidhasan98/discord-text-hook"
 	"github.com/nahidhasan98/sb-mobile/app/api"
 	"github.com/nahidhasan98/sb-mobile/config"
+)
+
+// Store client origin mapping (IP -> origin)
+var (
+	clientOrigins = make(map[string]string)
+	originMutex   sync.RWMutex
 )
 
 var counterName map[string]string = map[string]string{
@@ -213,7 +220,17 @@ func GetSchedule(c *gin.Context) {
 
 	// logging client ip address and request payload
 	clientIP := c.ClientIP()
-	logMsg := fmt.Sprintf("Client IP address: %v | Payload: %v > %v > %v", clientIP, counterName[postData.CounterId], stationName[postData.StationId], postData.JourneyDate)
+	
+	// Look up origin from stored client origins
+	originMutex.RLock()
+	origin := clientOrigins[clientIP]
+	originMutex.RUnlock()
+	
+	originLabel := "New"
+	if origin == "true" {
+		originLabel = "Old Domain"
+	}
+	logMsg := fmt.Sprintf("Client IP address: %v | Origin: %v | Payload: %v > %v > %v", clientIP, originLabel, counterName[postData.CounterId], stationName[postData.StationId], postData.JourneyDate)
 	log.Println(logMsg)
 	go sendToDiscord(logMsg)
 
@@ -240,6 +257,16 @@ var ticket map[string]string = map[string]string{
 func Index(c *gin.Context) {
 	// Check for the query parameter we added in Nginx
 	origin := c.Query("old_domain")
+
+	// Store origin for this client IP
+	clientIP := c.ClientIP()
+	originMutex.Lock()
+	if origin == "true" {
+		clientOrigins[clientIP] = "true"
+	} else {
+		clientOrigins[clientIP] = "false"
+	}
+	originMutex.Unlock()
 
 	showMigrationNotice := false
 	if origin == "true" {
