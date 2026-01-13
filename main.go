@@ -3,6 +3,7 @@ package main
 import (
 	"embed"
 	"html/template"
+	"io/fs"
 	"log"
 	"net/http"
 
@@ -26,7 +27,8 @@ func main() {
 	r.SetHTMLTemplate(tmpl)
 
 	// Serve static files from embedded filesystem
-	r.StaticFS("/assets", http.FS(assetsFS))
+	assetsSubFS, _ := fs.Sub(assetsFS, "assets")
+	r.StaticFS("/assets", http.FS(assetsSubFS))
 
 	router.CreateRoute(r)
 
