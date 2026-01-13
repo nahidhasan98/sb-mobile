@@ -13,6 +13,6 @@ if [[ "$1" == "-p" ]] || [[ "$1" == "--prod" ]]; then
 else
     # Build for local system
     echo "Building for local system..."
-    go build -ldflags "-s -w"
-    echo "Build complete: bin/sb-mobile ($(go env GOOS)/$(go env GOARCH))"
+    go build -ldflags "-s -w" -o ./sb-mobile
+    echo "Build complete: ./sb-mobile ($(go env GOOS)/$(go env GOARCH))"
 fi
