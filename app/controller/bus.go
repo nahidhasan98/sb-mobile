@@ -220,17 +220,17 @@ func GetSchedule(c *gin.Context) {
 
 	// logging client ip address and request payload
 	clientIP := c.ClientIP()
-	
+
 	// Look up origin from stored client origins
 	originMutex.RLock()
 	origin := clientOrigins[clientIP]
 	originMutex.RUnlock()
-	
+
 	originLabel := "New"
 	if origin == "true" {
 		originLabel = "Old Domain"
 	}
-	logMsg := fmt.Sprintf("Client IP address: %v | Origin: %v | Payload: %v > %v > %v", clientIP, originLabel, counterName[postData.CounterId], stationName[postData.StationId], postData.JourneyDate)
+	logMsg := fmt.Sprintf("Origin: %v | Client IP address: %v | Payload: %v > %v > %v", originLabel, clientIP, counterName[postData.CounterId], stationName[postData.StationId], postData.JourneyDate)
 	log.Println(logMsg)
 	go sendToDiscord(logMsg)
 
