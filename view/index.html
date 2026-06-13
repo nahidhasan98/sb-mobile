@@ -25,17 +25,19 @@
 
 <body>
     {{ if .ShowMigrationNotice }}
-    <div class="alert alert-warning my-2 text-center h2" role="alert">
-        <strong>⚠️ Important Notice:</strong> This site has moved to a new address. Please use the new address from now
-        on.
-        <br>
-        <span>New address:</span> <a href="https://sb-mobile.nahidhasan.dev"
-            style="display: inline-block; padding: 6px 12px; border-radius: 4px; background: linear-gradient(135deg, #5200e0 0%, #0017ba 100%); color: white;">
-            sb-mobile.nahidhasan.dev
-        </a>
+    <div style="display: grid; height: 100vh; align-items: center;">
+        <div class="alert alert-warning my-2 text-center h2" role="alert">
+            <p style="font-weight: bold;">⚠️ Important Notice:</p>
+            <p>This site has moved to a new address. Please use the the following address from now.</p>
+            <a href="https://sb-mobile.nahidhasan.dev"
+                style="display: inline-block; padding: 6px 12px; border-radius: 4px; color: #7a7af7;">
+                sb-mobile.nahidhasan.dev
+            </a>
+        </div>
     </div>
     {{ end }}
 
+    {{ if not .ShowMigrationNotice }}
     <div class="header py-2">
         <div class="headerlogo">
             <a href="/">
@@ -349,6 +351,7 @@
             </p>
         </div>
     </div>
+    {{ end }}
 
     <!-- scripts -->
     <script src="../assets/scripts/jquery-3.7.1.min.js"></script>
